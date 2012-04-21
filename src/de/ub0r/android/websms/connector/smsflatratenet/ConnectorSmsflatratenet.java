@@ -29,6 +29,7 @@ import android.text.TextUtils;
 import de.ub0r.android.websms.connector.common.BasicConnector;
 import de.ub0r.android.websms.connector.common.ConnectorCommand;
 import de.ub0r.android.websms.connector.common.ConnectorSpec;
+import de.ub0r.android.websms.connector.common.ConnectorSpec.SubConnectorSpec;
 import de.ub0r.android.websms.connector.common.Log;
 import de.ub0r.android.websms.connector.common.Utils;
 import de.ub0r.android.websms.connector.common.WebSMSException;
@@ -69,17 +70,23 @@ public final class ConnectorSmsflatratenet extends BasicConnector {
 				| ConnectorSpec.CAPABILITIES_SEND
 				| ConnectorSpec.CAPABILITIES_PREFS);
 		c.addSubConnector(ID_GW1,
-				context.getString(R.string.conenctor_gw1_name), 0);
+				context.getString(R.string.conenctor_gw1_name),
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
 		c.addSubConnector(ID_GW2,
-				context.getString(R.string.conenctor_gw2_name), 0);
+				context.getString(R.string.conenctor_gw2_name),
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
 		c.addSubConnector(ID_GW3,
-				context.getString(R.string.conenctor_gw3_name), 0);
+				context.getString(R.string.conenctor_gw3_name),
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
 		c.addSubConnector(ID_GW4,
-				context.getString(R.string.conenctor_gw4_name), 0);
+				context.getString(R.string.conenctor_gw4_name),
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
 		c.addSubConnector(ID_GW20,
-				context.getString(R.string.conenctor_gw20_name), 0);
+				context.getString(R.string.conenctor_gw20_name),
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
 		c.addSubConnector(ID_GW21,
-				context.getString(R.string.conenctor_gw21_name), 0);
+				context.getString(R.string.conenctor_gw21_name),
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
 		return c;
 	}
 
@@ -149,7 +156,7 @@ public final class ConnectorSmsflatratenet extends BasicConnector {
 
 	@Override
 	protected String getParamRecipients() {
-		return "to";
+		return null;
 	}
 
 	@Override
@@ -177,10 +184,7 @@ public final class ConnectorSmsflatratenet extends BasicConnector {
 
 	@Override
 	protected String getRecipients(final ConnectorCommand command) {
-		return Utils.joinRecipientsNumbers(
-				Utils.national2international(command.getDefPrefix(),
-						command.getRecipients()), ";", true).replaceAll("\\+",
-				"00");
+		return null;
 	}
 
 	@Override
@@ -216,6 +220,19 @@ public final class ConnectorSmsflatratenet extends BasicConnector {
 			final ConnectorCommand command, final ConnectorSpec cs,
 			final ArrayList<BasicNameValuePair> d) {
 		d.add(new BasicNameValuePair("aid", "6446"));
+
+		if (command.getType() == ConnectorCommand.TYPE_SEND) {
+			String r = Utils.joinRecipientsNumbers(
+					Utils.national2international(command.getDefPrefix(),
+							command.getRecipients()), ";", true).replaceAll(
+					"\\+", "00");
+			if (!TextUtils.isEmpty(r)) {
+				d.add(new BasicNameValuePair("to", r));
+				if (r.contains(";")) {
+					d.add(new BasicNameValuePair("bulk", "1"));
+				}
+			}
+		}
 	}
 
 	@Override
