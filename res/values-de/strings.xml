@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 Felix Bechstein -->
+<!--
+                This file is part of WebSMS. This program is free software; you can 
+                redistribute it and/or modify it under the terms of the GNU General 
+                Public License as published by the Free Software Foundation; either 
+                version 3 of the License, or (at your option) any later version. 
+-->
+<!--
+                This program is distributed in the hope that it will be useful, but 
+                WITHOUT ANY WARRANTY; without even the implied warranty of 
+                MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+                General Public License for more details. You should have received a 
+                copy of the GNU General Public License along with this program; If 
+                not, see <http://www.gnu.org/licenses/>. 
+-->
+<resources>
+
+    <string name="connector_preferences">Einstellungen - smsflatrate.net</string>
+    <string name="connector_enable">Aktiviere smsflatrate.net</string>
+    <string name="connector_create_account_hint">Neuen smsflatrate.net Account anlegen</string>
+    <string name="connector_appkey">AppKey</string>
+    <string name="connector_appkey_help_title">AppKey Hilfe</string>
+    <string name="connector_appkey_help">Auf smsflatrate.net anmelden. Im Kunden-Login auf den Menüpunkt "Appkey" klicken. Trage dort folgende Lizenznummer ein: 217075044. Daraufhin wird dir ein persönlicher Appkey generiert. Diesen im App unter "Einstellungen" eintragen - fertig!</string>
+    <string name="conenctor_gw1_name">(1) DE, mit Absender</string>
+    <string name="conenctor_gw2_name">(2) INT, mit Absender</string>
+    <string name="conenctor_gw3_name">(3) DE, ohne Absender</string>
+    <string name="conenctor_gw4_name">(4) INT,ohne Absender</string>
+    <string name="conenctor_gw20_name">(20) Smart DE, ohne Absender</string>
+    <string name="conenctor_gw21_name">(21) Smart INT, ohne Absender</string>
+    <string name="connector_error_110">Falscher Schnittstellen-Key oder Ihr Account ist gesperrt</string>
+    <string name="connector_error_140">Ungültiger AppKey</string>
+    <string name="connector_error_150">Sie haben versucht an eine internationale Handynummer eines Gateways, das ausschließlich für den Versand nach Deutschland bestimmt ist, zu senden. Bitte internationales Gateway verwenden.</string>
+    <string name="connector_error_404">Unbekannter Fehler. Bitte dringend Support (service@smsflatrate.net) kontaktieren.</string>
+
+</resources>
