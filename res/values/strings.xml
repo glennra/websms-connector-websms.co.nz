@@ -33,6 +33,8 @@
     <string name="conenctor_gw2_name">(2) INT, with sender id</string>
     <string name="conenctor_gw3_name">(3) DE, w/o sender id</string>
     <string name="conenctor_gw4_name">(4) INT, w/o sender id</string>
+    <string name="conenctor_gw10_name">(10) High Quality DE, with sender id</string>
+    <string name="conenctor_gw11_name">(11) High Quality INT, with sender id</string>
     <string name="conenctor_gw20_name">(20) Smart DE, w/o sender id</string>
     <string name="conenctor_gw21_name">(21) Smart INT, w/o sender id</string>
     <string name="connector_error_110">Invalid gateway key or your account is locked</string>

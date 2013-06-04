@@ -18,7 +18,9 @@
  */
 package de.ub0r.android.websms.connector.smsflatratenet;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import org.apache.http.message.BasicNameValuePair;
 
@@ -54,6 +56,10 @@ public final class ConnectorSmsflatratenet extends BasicConnector {
 	private static final String ID_GW3 = "3";
 	/** SubConnector id: Gateway 4. */
 	private static final String ID_GW4 = "4";
+	/** SubConnector id: Gateway 10. */
+	private static final String ID_GW10 = "10";
+	/** SubConnector id: Gateway 11. */
+	private static final String ID_GW11 = "11";
 	/** SubConnector id: Gateway 20. */
 	private static final String ID_GW20 = "20";
 	/** SubConnector id: Gateway 21. */
@@ -71,22 +77,36 @@ public final class ConnectorSmsflatratenet extends BasicConnector {
 				| ConnectorSpec.CAPABILITIES_PREFS);
 		c.addSubConnector(ID_GW1,
 				context.getString(R.string.conenctor_gw1_name),
-				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS
+						| SubConnectorSpec.FEATURE_SENDLATER);
 		c.addSubConnector(ID_GW2,
 				context.getString(R.string.conenctor_gw2_name),
-				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS
+						| SubConnectorSpec.FEATURE_SENDLATER);
 		c.addSubConnector(ID_GW3,
 				context.getString(R.string.conenctor_gw3_name),
-				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS
+						| SubConnectorSpec.FEATURE_SENDLATER);
 		c.addSubConnector(ID_GW4,
 				context.getString(R.string.conenctor_gw4_name),
-				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS
+						| SubConnectorSpec.FEATURE_SENDLATER);
+		c.addSubConnector(ID_GW10,
+				context.getString(R.string.conenctor_gw10_name),
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS
+						| SubConnectorSpec.FEATURE_SENDLATER);
+		c.addSubConnector(ID_GW11,
+				context.getString(R.string.conenctor_gw11_name),
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS
+						| SubConnectorSpec.FEATURE_SENDLATER);
 		c.addSubConnector(ID_GW20,
 				context.getString(R.string.conenctor_gw20_name),
-				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS
+						| SubConnectorSpec.FEATURE_SENDLATER);
 		c.addSubConnector(ID_GW21,
 				context.getString(R.string.conenctor_gw21_name),
-				SubConnectorSpec.FEATURE_MULTIRECIPIENTS);
+				SubConnectorSpec.FEATURE_MULTIRECIPIENTS
+						| SubConnectorSpec.FEATURE_SENDLATER);
 		return c;
 	}
 
@@ -167,6 +187,18 @@ public final class ConnectorSmsflatratenet extends BasicConnector {
 	@Override
 	protected String getParamText() {
 		return "text";
+	}
+
+	@Override
+	protected String getParamSendLater() {
+		return "time";
+	}
+
+	@Override
+	protected String getSendLater(final long sendLater) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTimeInMillis(sendLater);
+		return new SimpleDateFormat("dd.MM.yyyy-kk:mm").format(cal.getTime());
 	}
 
 	@Override
