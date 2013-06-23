@@ -16,19 +16,20 @@
 -->
 <resources>
 
-    <string name="app_name" translatable="false">WebSMS Connector: smsflatrate.net</string>
+    <string name="app_name" translatable="false">WebSMS Connector: websms.co.nz</string>
     <string name="app_version" translatable="false">1.1</string>
-    <string name="connector_author" translatable="false">Felix Bechstein &lt;f@ub0r.de></string>
-    <string name="connector_name" translatable="false">smsflatrate.net</string>
-    <string name="connector_preferences">Preferences - smsflatrate.net</string>
-    <string name="connector_enable">Enable smsflatrate.net</string>
-    <string name="connector_create_account_hint">Create new smsflatrate.net account</string>
-    <string name="connector_create_account_url" translatable="false">http://smsflatrate.net/</string>
-    <string name="connector_appkey">AppKey</string>
+    <string name="connector_author" translatable="false">Glenn Ramsey &lt;glenn@componic.co.nz&gt;and Felix Bechstein &lt;f@ub0r.de></string>
+    <string name="connector_name" translatable="false">websms.co.nz</string>
+    <string name="connector_preferences">Preferences - websms.co.nz</string>
+    <string name="connector_enable">Enable websms.co.nz</string>
+    <string name="connector_create_account_hint">Create new websms.co.nz account</string>
+    <string name="connector_create_account_url" translatable="false">http://websms.co.nz/</string>
+    <string name="connector_email">EMail</string>
+    <string name="connector_password">Password</string>
     <string name="connector_appkey_help_title">AppKey Help</string>
-    <string name="connector_appkey_help">You need an account on smsflatrate.net, please register. Go to the user login on the menu item "Appkey” an use the following license number: 217075044 to generate your own Appkey. Set this Appkey in your app in the menue "Settings"- done!</string>
+    <string name="connector_appkey_help">You need an account on websms.co.nz, please register. Go to the user login on the menu item "Appkey” an use the following license number: 217075044 to generate your own Appkey. Set this Appkey in your app in the menue "Settings"- done!</string>
     <string name="connector_support" translatable="false">Support</string>
-    <string name="connector_support_hint" translatable="false">Kloppe Media\nsmsflatrate.net\nPostfach 1444\n91536 Rothenburg\nGERMANY\n\nWeb: www.smsflatrate.net\nMail: service@smsflatrate.net\n\nSpecial thanks to Felix Bechstein, WebSMS</string>
+    <string name="connector_support_hint" translatable="false">Kloppe Media\nwebsms.co.nz\nPostfach 1444\n91536 Rothenburg\nGERMANY\n\nWeb: www.websms.co.nz\nMail: service@websms.co.nz\n\nSpecial thanks to Felix Bechstein, WebSMS</string>
     <string name="conenctor_gw1_name">(1) DE, with sender id</string>
     <string name="conenctor_gw2_name">(2) INT, with sender id</string>
     <string name="conenctor_gw3_name">(3) DE, w/o sender id</string>
@@ -40,6 +41,6 @@
     <string name="connector_error_110">Invalid gateway key or your account is locked</string>
     <string name="connector_error_140">Invalid AppKey</string>
     <string name="connector_error_150">You have tried to send to an international phone number through a gateway determined to handle german receivers only. Please use an international Gateway-Type.</string>
-    <string name="connector_error_404">Unknown error. Please urgently contact support (service@smsflatrate.net).</string>
+    <string name="connector_error_404">Unknown error. Please urgently contact support (service@websms.co.nz).</string>
 
 </resources>
