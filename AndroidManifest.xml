@@ -48,7 +48,7 @@
 
         <activity android:name=".Preferences" >
             <intent-filter>
-                <action android:name="de.ub0r.android.websms.connector.smsflatratenet.PREFS" />
+                <action android:name="nz.co.componic.websmsconz.PREFS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -59,8 +59,8 @@
             android:enabled="true"
             android:exported="true" >
             <intent-filter>
-                <action android:name="de.ub0r.android.websms.connector.smsflatratenet.RUN_UPDATE" />
-                <action android:name="de.ub0r.android.websms.connector.smsflatratenet.RUN_SEND" />
+                <action android:name="nz.co.componic.websmsconz.RUN_UPDATE" />
+                <action android:name="nz.co.componic.websmsconz.RUN_SEND" />
                 <action android:name="de.ub0r.android.websms.connector.UPDATE" />
             </intent-filter>
         </receiver>
